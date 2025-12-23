@@ -111,6 +111,21 @@ This project respects all mandatory requirements of the Inception subject:
 
 ---
 
+## Gerando os certificados TSL e dando permissão
+
+```
+#Cria a pasta certs dentro do ngnix e gera os certificados lá dentro
+mkdir -p srcs/requirements/nginx/certs
+openssl req -x509 -nodes -days 365 \
+  -newkey rsa:2048 \
+  -keyout srcs/requirements/nginx/certs/privkey.pem \
+  -out srcs/requirements/nginx/certs/fullchain.pem \
+  -subj "/CN=yufonten.42.fr"
+
+#Dando permissão para os arquivos
+chmod 600 srcs/requirements/nginx/certs/privkey.pem
+chmod 644 srcs/requirements/nginx/certs/fullchain.pem
+
 ## Maintenance
 
 To rebuild everything from scratch:
