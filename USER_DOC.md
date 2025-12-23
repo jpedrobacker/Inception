@@ -29,7 +29,7 @@ make down
 To fully reset data (⚠️ deletes volumes):
 
 ```bash
-make clean
+make fclean
 ```
 
 ---
@@ -89,3 +89,40 @@ Run:
 docker ps
 docker logs nginx
 ```
+
+## Verifications
+
+Make sure that NGINX is exposed in port 443:
+
+```
+docker ps
+```
+
+```
+curl -vk https://login.42.fr
+```
+
+Check if SSL/TLS is actiave:
+
+```
+openssl s_client -connect login.42.fr:443
+```
+
+## Verify ist the users is set-up correctly
+
+```
+# Enter mariadb docker bash:
+docker exec -it mariadb bash
+
+
+# Connect to WordPress DB:
+mysql -u root -p
+
+#Select WordPress DB:
+USE wordpress;
+
+
+# List the users:
+SELECT ID, user_login, user_email FROM wp_users;
+```
+
