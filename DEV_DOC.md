@@ -57,13 +57,13 @@ All containers communicate internally through this network.
 ### WordPress Data
 
 ```
-/home/jbergfel/data/wordpress
+~/data/wordpress
 ```
 
 ### MariaDB Data
 
 ```
-/home/jbergfel/data/mariadb
+~/data/mariadb
 ```
 
 These volumes ensure data persistence across container restarts.
@@ -82,7 +82,7 @@ Sensitive data is stored using Docker secrets:
 Secrets are mounted under:
 
 ```
-/run/secrets/
+inception/secrets/
 ```
 
 No credentials are hardcoded in Dockerfiles.
