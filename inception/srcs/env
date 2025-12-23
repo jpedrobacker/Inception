@@ -1,0 +1,20 @@
+# Server Domain
+SERVER_NAME=jbergfel.42.fr
+
+# DB config
+DB_HOST=mariadb
+DB_NAME=wordpress
+DB_USER=wpuser
+
+# WP config
+WP_URL=https://jbergfel.42.fr
+WP_TITLE=Inception
+
+# ADM user
+WP_ADMIN_USER=super_jbergfel
+WP_ADMIN_EMAIL=jbergfel@gmail.com
+
+# Second user
+WP_USER2=jbergfel
+WP_USER2_EMAIL=jbergfel2@gmail.com
+WP_USER2_ROLE=author
